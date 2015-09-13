@@ -5,7 +5,7 @@ createPlot <- function(d) {
     with(d, {
         # fig1
         plot(Date, Global_active_power, type="l",
-             ylab = "Global Active Power (kilowatts)",
+             ylab = "Global Active Power",
              xlab = "")
         # fig2
         plot(rep(Date,3), c(Sub_metering_1, Sub_metering_2, Sub_metering_3), type="n",
