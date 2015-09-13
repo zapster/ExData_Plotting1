@@ -33,5 +33,5 @@ getDateFrame <- function(nrows=-1) {
     # drop Time column
     d <- d[c(1, 3:9)]
     # filter date
-    d[d[["Date"]] >= as.POSIXct("2007-02-02 00:00") & d[["Date"]] < as.POSIXct("2007-02-03 0:00"),]
+    d[d[["Date"]] >= as.POSIXct("2007-02-01 00:00") & d[["Date"]] < as.POSIXct("2007-02-03 0:00"),]
 }
