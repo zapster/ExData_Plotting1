@@ -12,7 +12,7 @@
 # Sub_metering_3: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
 #
 
-getDateFrame <- function(nrows=-1) {
+getDataFrame <- function(nrows=-1) {
     d <- read.csv("household_power_consumption.txt",
                   sep = ";",
                   na.strings = "?",
@@ -34,4 +34,10 @@ getDateFrame <- function(nrows=-1) {
     d <- d[c(1, 3:9)]
     # filter date
     d[d[["Date"]] >= as.POSIXct("2007-02-01 00:00") & d[["Date"]] < as.POSIXct("2007-02-03 0:00"),]
+}
+
+createPNG <- function(name, f, ...) {
+    png(name, width = 480, height = 480)
+    f(...)
+    dev.off()
 }

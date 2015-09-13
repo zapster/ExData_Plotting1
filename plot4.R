@@ -1,11 +1,5 @@
 source("readData.R")
 
-createPNG <- function(f, ...) {
-    png("plot4.png", width = 480, height = 480)
-    f(...)
-    dev.off()
-}
-
 createPlot <- function(d) {
     par(mfcol=c(2,2))
     with(d, {
@@ -31,3 +25,5 @@ createPlot <- function(d) {
             xlab = "datetime")
     })
 }
+
+createPNG("plot4.png", createPlot, getDataFrame())
